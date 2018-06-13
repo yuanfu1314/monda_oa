@@ -16,7 +16,8 @@ use herosphp\utils\Page;
 
 /**
  * admin 模块基类控制
- * @author  yangjian<yangjian102621@gmail.com>
+ * @author  YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 abstract class CommonAction extends Controller {
 
@@ -73,15 +74,15 @@ abstract class CommonAction extends Controller {
         $module = $request->getModule();
         $action = $request->getAction();
         $this->assign("index_url", "/{$module}/{$action}/index");
-        $this->assign('add_url',"/{$module}/{$action}/add");
-        $this->assign('edit_url',"/{$module}/{$action}/edit");
+        $this->assign('add_url', "/{$module}/{$action}/add");
+        $this->assign('edit_url', "/{$module}/{$action}/edit");
         $this->assign("insert_url", "/{$module}/{$action}/insert");
         $this->assign("update_url", "/{$module}/{$action}/update");
-        $this->assign('delete_url',"/{$module}/{$action}/delete");
-        $this->assign('deletes_url',"/{$module}/{$action}/deletes");
-        $this->assign('cancel_url',"/{$module}/{$action}/cancel");
-        $this->assign('agree_url',"/{$module}/{$action}/agree");
-        $this->assign('reject_url',"/{$module}/{$action}/reject");
+        $this->assign('delete_url', "/{$module}/{$action}/delete");
+        $this->assign('deletes_url', "/{$module}/{$action}/deletes");
+        $this->assign('cancel_url', "/{$module}/{$action}/cancel");
+        $this->assign('agree_url', "/{$module}/{$action}/agree");
+        $this->assign('reject_url', "/{$module}/{$action}/reject");
         $this->assign("noRecords", Lang::NO_RECOEDS);
 
         //加载菜单
@@ -94,7 +95,7 @@ abstract class CommonAction extends Controller {
      */
     public function index(HttpRequest $request) {
         $this->page = $request->getParameter('page', 'intval');
-        if ( $this->page <=0 ) {
+        if ( $this->page <= 0 ) {
             $this->page = 1;
         }
         if (empty($this->service)) {
@@ -112,8 +113,6 @@ abstract class CommonAction extends Controller {
     /**
      * 分页
      * @param $total
-     * @param $pagesize
-     * @param $page
      */
     protected function PageView($total){
 
@@ -200,14 +199,16 @@ abstract class CommonAction extends Controller {
     /**
      * 启用|禁用 操作
      * @param HttpRequest $request
+     * @param function $callback
      */
     public function enable(HttpRequest $request, $callback = null) {
         $id = $request->getParameter('id', 'trim');
         $enable = $request->getParameter('enable');
+        $field = $request->getParameter('field');
         if (empty($id)) {
             JsonResult::fail(Lang::OPT_FAIL);
         }
-        if ($this->service->set('enable', $enable, $id)) {
+        if ($this->service->set($field, $enable, $id)) {
 
             if (!is_null($callback)) {
                 call_user_func($callback, $this->service);
@@ -230,8 +231,9 @@ abstract class CommonAction extends Controller {
     /**
      * 删除单条数据
      * @param HttpRequest $request
+     * @param function $callback
      */
-    public function delete( HttpRequest $request, $callback = null) {
+    public function delete(HttpRequest $request, $callback = null) {
 
         $id = $request->getParameter('id', 'trim');
         if ( empty($id) ) {
@@ -249,7 +251,6 @@ abstract class CommonAction extends Controller {
         }
     }
 
-
     /**
      * 加载左侧的菜单
      * 设置最大的菜单200条
@@ -259,7 +260,6 @@ abstract class CommonAction extends Controller {
         $items = $service->getMenuCache();
         $this->assign('adminMenus', $items);
     }
-
 
     /**
      * 删除多条数据
@@ -275,9 +275,7 @@ abstract class CommonAction extends Controller {
         } else {
             JsonResult::result(JsonResult::CODE_FAIL, Lang::DELETE_FAIL);
         }
-    }
-
-    
+    } 
 
     /**
      * @param HttpRequest $request
@@ -294,10 +292,12 @@ abstract class CommonAction extends Controller {
     }
 
     /**
-     * @param $field
-     * @param $value
-     * @param $where
-     * @return bool
+     * @param $field  需要检查的字段
+     * @param $value  需要检查的值
+     * @param $field  where 条件的字段
+     * @param $opt1   where 条件的字段操作符
+     * @param $value1 where 条件字段的值
+     * @return bool  true/false
      * 检验某个字段的值是否在数据库中存在，用于保持某个字段的唯一性
      */
     public function checkExist($field, $value, $field1 = '1', $opt1 = '=', $value1 = '1') {

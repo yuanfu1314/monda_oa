@@ -12,7 +12,8 @@ use app\admin\action\CommonAction;
 
 /**
  * 办公室申请控制器
- * @author  yuanfu<yuanf@pvc123.com>
+ * @author YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class ApplyAction extends CommonAction {
 
@@ -63,7 +64,6 @@ class ApplyAction extends CommonAction {
             $this->setView("office/apply_index");
         }
         
-
     }
 
     /**
@@ -71,7 +71,7 @@ class ApplyAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function add(HttpRequest $request) {
-        $offices = $this->loadOffice();
+        $offices = $this->service->loadOffice();
         $this->assign('offices', $offices);
         $this->setOpt($this->actionTitle);
         $this->setView('office/apply_add');
@@ -94,7 +94,7 @@ class ApplyAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function insert(HttpRequest $request) {
-        $data = $request->getParameter('data','trim');
+        $data = $request->getParameter('data', 'trim');
         if (strtotime($data['time_begin']) >= strtotime($data['time_end'])) {
             JsonResult::fail(Lang::DATETIME_OVER_FAIL);
         }

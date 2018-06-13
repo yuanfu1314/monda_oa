@@ -13,7 +13,8 @@ use app\admin\action\CommonAction;
 
 /**
  * 假期申请控制器
- * @author  yuanfu<yuanf@pvc123.com>
+ * @author  YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class AuditAction extends CommonAction {
 
@@ -53,7 +54,7 @@ class AuditAction extends CommonAction {
         $this->setOpt($this->actionTitle.'列表');
         $this->setView("leave/audit_index");
         if ($is_ajax == true) {
-            $this->setView("leave/audit_index_list");
+            $this->setView("leave/apply_index_list");
         }else{
             $this->setView("leave/audit_index");
         }
@@ -89,7 +90,7 @@ class AuditAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function update(HttpRequest $request) {
-        $data = $request->getParameter('data','trim');
+        $data = $request->getParameter('data', 'trim');
         $id = $request->getParameter('id', 'intval');
         $data['status'] = $request->getParameter('status', 'intval');
         $data['auditor_id'] = $this->loginUser->getId();

@@ -12,6 +12,7 @@ use app\admin\action\CommonAction;
 /**
  * 公告控制器
  * @author  yuanfu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class AnnouncementAction extends CommonAction {
 
@@ -24,10 +25,17 @@ class AnnouncementAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function index(HttpRequest $request) {
-
+        $search_data = $request->getParameter('search_data');
+        $is_ajax = $request->getParameter('is_ajax');
+        //数据查询
+        $this->service->search_data($search_data);
         parent::index($request);
         $this->setOpt($this->actionTitle.'列表');
-        $this->setView("announcement/announcement_index");
+        if ($is_ajax == true) {
+            $this->setView("announcement/announcement_index_list");
+        }else{
+            $this->setView("announcement/announcement_index");
+        }
 
     }
 

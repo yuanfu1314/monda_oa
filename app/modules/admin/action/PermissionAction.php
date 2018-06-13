@@ -10,7 +10,8 @@ use herosphp\utils\JsonResult;
 
 /**
  * 管理员权限控制器
- * @author  yangjian<yangjian102621@gmail.com>
+ * @author  YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class PermissionAction extends CommonAction {
 
@@ -39,18 +40,10 @@ class PermissionAction extends CommonAction {
         $this->assign('items', $items);
         $this->setOpt($this->actionTitle."列表");
         if ($is_ajax == true) {
-            $this->setView("role/permission_index_list");
+            $this->setView("permission/permission_index_list");
         }else{
-            $this->setView("role/permission_index");
+            $this->setView("permission/permission_index");
         }
-
-    }
-
-    /**
-     * 添加数据
-     * @param HttpRequest $request
-     */
-    public function add(HttpRequest $request) {
 
     }
 

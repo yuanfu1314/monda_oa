@@ -17,13 +17,13 @@
                     <div class="widget am-cf">
                         <div class="widget-head am-cf">
                             <div class="widget-title  am-cf"><?php echo $optTitle?></div>
-    
+                            <?php if ($isAdmin || in_array($add_url,$permissions) ) {?>
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
                                     <a href="<?php echo $add_url?>" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 申请</a>
                                 </div>
                             </div>
-                            
+                            <?php } ?>
                         </div>
                         <div class="widget-body  am-fr">
                             <div class="am-g">

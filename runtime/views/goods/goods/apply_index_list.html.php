@@ -43,7 +43,7 @@
                                         <td><?php echo $value[comment]?></td>
                                         <td>
                                             <?php if ( $action == 'apply' ) { ?>
-                                            <?php if ($isAdmin || in_array(strtolower($cancel_url),$permissions) ) {?>
+                                            <?php if ($isAdmin || in_array($cancel_url,$permissions) ) {?>
                                             <a data-url="<?php echo $cancel_url?>?id=<?php echo $value[id]?>"
                                                href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-cancel">
                                                 <i class="am-icon-close"></i> 取消
@@ -51,13 +51,13 @@
                                             <?php } ?>
                                             <?php } else { ?>
                                             <?php if ( $value[is_show] ) { ?>
-                                            <?php if ($isAdmin || in_array(strtolower($received_url),$permissions) ) {?>
+                                            <?php if ($isAdmin || in_array($received_url,$permissions) ) {?>
                                             <a data-url="<?php echo $received_url?>?id=<?php echo $value[id]?>"
                                                href="javascript:;" class="am-btn am-btn-success am-btn-xxs am-round item-confirm">
                                                 <i class="am-icon-check"></i> 确认领取
                                             </a>
                                             <?php } ?>
-                                            <?php if ($isAdmin || in_array(strtolower($reject_url),$permissions) ) {?>
+                                            <?php if ($isAdmin || in_array($reject_url,$permissions) ) {?>
                                             <a href="<?php echo $reject_url?>?id=<?php echo $value[id]?>"
                                                href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round">
                                                 <i class="am-icon-ban"></i> 拒绝申请

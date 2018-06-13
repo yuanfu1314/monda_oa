@@ -12,7 +12,8 @@ use herosphp\utils\JsonResult;
 
 /**
  * 管理员角色控制器
- * @author  yangjian<yangjian102621@gmail.com>
+ * @author  YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class RoleAction extends CommonAction {
 
@@ -26,17 +27,10 @@ class RoleAction extends CommonAction {
      */
     public function index(HttpRequest $request) {
         parent::index($request);
-
+        $this->assign("auth_url", "/admin/role/savePermissions");
+        $auth_url = $this->getTemplateVar('auth_url');
         $this->setOpt($this->actionTitle."列表");
         $this->setView("role/role_index");
-
-    }
-
-    /**
-     * 添加数据
-     * @param HttpRequest $request
-     */
-    public function add(HttpRequest $request) {
 
     }
 
@@ -51,7 +45,6 @@ class RoleAction extends CommonAction {
         if (empty($item)) {
             JsonResult::fail(Lang::FETCH_FAIL);
         } else {          
-            //$data = StringUtils::jsonEncode($item);
             $json = new JsonResult('0', '', array());
             $json->setCode(JsonResult::CODE_SUCCESS);
             $json->putItem($item);

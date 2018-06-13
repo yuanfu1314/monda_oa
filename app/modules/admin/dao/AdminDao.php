@@ -26,13 +26,10 @@ class AdminDao extends MysqlModel {
             'telephone' => array(Filter::DFILTER_MOBILE,  null, null, array("type" => "请输入正确的手机号码")),
             'department' => array(Filter::DFILTER_STRING, array(1, 20), Filter::DFILTER_SANITIZE_TRIM, array("require" => "部门不能为空", 'length' => '部门长度必需在1-20之间.')),
             'position' => array(Filter::DFILTER_STRING, array(1, 20), Filter::DFILTER_SANITIZE_TRIM, array("require" => "职位不能为空", 'length' => '职位长度必需在1-20之间.')),
-            'leader_id' => array(Filter::DFILTER_NUMERIC, null, null,
-                array('type' => '上司ID必须为数字.')),
+            'leader_id' => array(Filter::DFILTER_NUMERIC, null, null, array('type' => '上司ID必须为数字.')),
             'leader_name' => array(Filter::DFILTER_STRING, null, Filter::DFILTER_SANITIZE_TRIM, null),
-            'is_admin' => array(Filter::DFILTER_NUMERIC, null, null,
-                array('type' => '是否管理者必须为数字.')),
-            'enable' => array(Filter::DFILTER_NUMERIC, null, null,
-                array('type' => '是否可用必须为数字.')),
+            'is_admin' => array(Filter::DFILTER_NUMERIC, null, null, array('type' => '是否管理者必须为数字.')),
+            'enable' => array(Filter::DFILTER_NUMERIC, null, null, array('type' => '是否可用必须为数字.')),
         );
     }
 } 

@@ -9,7 +9,8 @@ use herosphp\string\StringUtils;
 /**
  * 物品服务
  * ----------------
- * @author yuanfu<yuanf@pvc123.com>
+ * @author YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class GoodsService extends CommonService {
 

@@ -32,7 +32,7 @@ class OfficeApplyService extends CommonService {
                 $this->modelDao->where('status', $search->status);
             }
             if (!empty($search->name)) {
-                $this->modelDao->where('name', 'LIKE', "{$search->name}%");
+                $this->modelDao->where('name', 'LIKE', "%{$search->name}%");
             }
             if (!empty($search->time_begin_start)) {
                 $this->modelDao->where('time_begin', '>=', $search->time_begin_start);

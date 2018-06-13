@@ -2,7 +2,8 @@
 
 /**
  * 物品
- * @author yuanfu<yuanf@pvc123.com>
+ * @author YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 namespace app\goods\dao;
 

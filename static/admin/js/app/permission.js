@@ -10,7 +10,6 @@ define(function(require, exports) {
     common.initForm("#cAdd");
     //初始化 switch 控件
     common.initSwitch();
-
     //添加权限
     $("#item-add").on("click", function () {
         common.post({

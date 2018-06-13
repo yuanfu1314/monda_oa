@@ -45,7 +45,7 @@
                                         <td><?php echo $value[comment]?></td>
                                         <td>
                                             <?php if ( $action == 'apply' ) { ?>
-                                            <?php if ($isAdmin || in_array(strtolower($cancel_url),$permissions) ) {?>
+                                            <?php if ($isAdmin || in_array($cancel_url,$permissions) ) {?>
                                             <a data-url="<?php echo $cancel_url?>?id=<?php echo $value[id]?>"
                                                href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-cancel">
                                                 <i class="am-icon-close"></i> 关闭申请
@@ -53,7 +53,7 @@
                                             <?php } ?>
                                             <?php } else { ?>
                                             <?php if ( $value[is_show] ) { ?>
-                                            <?php if ($isAdmin || in_array(strtolower($reject_url),$permissions) ) {?>
+                                            <?php if ($isAdmin || in_array($reject_url,$permissions) ) {?>
                                             <a href="<?php echo $reject_url?>?id=<?php echo $value[id]?>"
                                                href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round">
                                                 <i class="am-icon-ban"></i> 拒绝申请

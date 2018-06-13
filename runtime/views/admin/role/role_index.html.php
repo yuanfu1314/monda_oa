@@ -17,7 +17,7 @@
                     <div class="widget am-cf">
                         <div class="widget-head am-cf">
                             <div class="widget-title  am-cf"><?php echo $optTitle?></div>
-    
+                            <?php if ($isAdmin || in_array($add_url,$permissions) ) {?>
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
                                     <a href="javascript:;"
@@ -25,6 +25,7 @@
                                             class="am-icon-plus"></span> 新增</a>
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
                         <div class="widget-body  am-fr">
                             
@@ -73,22 +74,26 @@
                                             </div>
                                         </td>
                                         <td>
+                                            <?php if ($isAdmin || in_array($edit_url,$permissions) ) {?>
                                             <a class="am-btn am-btn-primary am-btn-xxs am-round item-edit"
                                                data-id="<?php echo $value[id]?>"
                                                href="javascript:;">
                                                 <i class="am-icon-pencil"></i> 编辑
                                             </a>
-    
+                                            <?php } ?>
+                                            <?php if ($isAdmin || in_array($auth_url,$permissions) ) {?>
                                             <a class="am-btn am-btn-secondary am-btn-xxs am-round permission-edit"
                                                data-id="<?php echo $value[id]?>"
                                                href="javascript:;">
                                                 <i class="am-icon-edit"></i> 修改权限
                                             </a>
-                                            
+                                            <?php } ?>
+                                            <?php if ($isAdmin || in_array($delete_url,$permissions) ) {?>
                                             <a data-url="<?php echo $delete_url?>?id=<?php echo $value[id]?>"
                                                href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-delete">
                                                 <i class="am-icon-trash"></i> 删除
                                             </a>
+                                            <?php } ?>
                                         </td>
                                     </tr>
                                     <?php } ?>

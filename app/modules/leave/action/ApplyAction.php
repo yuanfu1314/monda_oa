@@ -12,7 +12,7 @@ use app\admin\action\CommonAction;
 
 /**
  * 假期申请控制器
- * @author  Yuanfu<yuanf@pvc123.com>
+ * @author  YuanFu<yuanf@pvc123.com>
  * @date 2018-06-06
  */
 class ApplyAction extends CommonAction {
@@ -85,7 +85,7 @@ class ApplyAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function insert(HttpRequest $request) {
-        $data = $request->getParameter('data','trim');
+        $data = $request->getParameter('data', 'trim');
         $service = Loader::service(LeaveService::class);
         $leaveData = $service->fields('leave_type')->findById($data['leave_type_id']);
         $data['leave_type'] = $leaveData['leave_type'];
@@ -101,7 +101,7 @@ class ApplyAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function update(HttpRequest $request) {
-        $data = $request->getParameter('data','trim');
+        $data = $request->getParameter('data', 'trim');
         $id = $request->getParameter('id', 'intval');
         //leave_type是否唯一
         $unique = parent::checkExist('leave_type', $data['leave_type'], 'id', '!=', $id);

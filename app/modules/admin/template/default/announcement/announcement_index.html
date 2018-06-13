@@ -17,13 +17,13 @@
                     <div class="widget am-cf">
                         <div class="widget-head am-cf">
                             <div class="widget-title  am-cf">{$optTitle}</div>
-    
+                            {permission $add_url $permissions}
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
                                     <a href="{$add_url}" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 申请</a>
                                 </div>
                             </div>
-                            
+                            {/permission}
                         </div>
                         <div class="widget-body  am-fr">
                             <div class="am-g">

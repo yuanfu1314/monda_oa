@@ -7,7 +7,8 @@ use herosphp\model\CommonService;
 /**
  * 管理员角色服务
  * ----------------
- * @author yangjian<yangjian102621@gmail.com>
+ * @author YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-06
  */
 class AdminRoleService extends CommonService {
 

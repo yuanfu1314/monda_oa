@@ -47,7 +47,7 @@
                                         <td><?php echo $value[comment]?></td>
                                         <td>
                                             <?php if ( $action == 'apply' ) { ?>
-                                            <?php if ($isAdmin || in_array(strtolower($cancel_url),$permissions) ) {?>
+                                            <?php if ($isAdmin || in_array($cancel_url,$permissions) ) {?>
                                             <a data-url="<?php echo $cancel_url?>?id=<?php echo $value[id]?>"
                                                href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-cancel">
                                                 <i class="am-icon-ban"></i> 取消
@@ -55,14 +55,14 @@
                                             <?php } ?>
                                             <?php } else { ?>
                                             <?php if ( $value[is_show] ) { ?>
-                                            <?php if ($isAdmin || in_array(strtolower($agree_url),$permissions) ) {?>
+                                            <?php if ($isAdmin || in_array($agree_url,$permissions) ) {?>
                                             <a href="<?php echo $agree_url?>?id=<?php echo $value[id]?>"
                                                class="am-btn am-btn-primary am-btn-xxs am-round"
                                                href="javascript:;">
                                                 <i class="am-icon-check"></i> 同意申请
                                             </a>
                                             <?php } ?>
-                                            <?php if ($isAdmin || in_array(strtolower($reject_url),$permissions) ) {?>
+                                            <?php if ($isAdmin || in_array($reject_url,$permissions) ) {?>
                                             <a href="<?php echo $reject_url?>?id=<?php echo $value[id]?>"
                                                class="am-btn am-btn-warning am-btn-xxs am-round"
                                                href="javascript:;">

@@ -2,7 +2,8 @@
 
 /**
  * 管理员用户角色权限
- * @author yangjian<yangjian102621@gmail.com>
+ * @author  YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 namespace app\admin\dao;
 

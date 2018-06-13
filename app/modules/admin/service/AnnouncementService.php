@@ -10,6 +10,7 @@ use herosphp\string\StringUtils;
  * 公告服务
  * ----------------
  * @author yuanfu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class AnnouncementService extends CommonService {
 
@@ -28,7 +29,7 @@ class AnnouncementService extends CommonService {
                 $this->modelDao->where('enable', $search->enable);
             }
             if (!empty($search->name)) {
-                $this->modelDao->where('name', 'LIKE', "{$search->name}%");
+                $this->modelDao->where('name', 'LIKE', "%{$search->name}%");
             }
             if (!empty($search->time_begin)) {
                 $this->modelDao->where('addtime', '>=', $search->time_begin);

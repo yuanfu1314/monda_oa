@@ -47,15 +47,19 @@
                                         <td><?php echo $value[addtime]?></td>
                                         <td><?php echo $value[updatetime]?></td>
                                         <td>
+                                            <?php if ($isAdmin || in_array($edit_url,$permissions) ) {?>
                                             <a href="<?php echo $edit_url?>?id=<?php echo $value[id]?>"
                                                class="am-btn am-btn-primary am-btn-xxs am-round"
                                                href="javascript:;">
                                                 <i class="am-icon-pencil"></i> 编辑
                                             </a>
+                                            <?php } ?>
+                                            <?php if ($isAdmin || in_array($delete_url,$permissions) ) {?>
                                             <a data-url="<?php echo $delete_url?>?id=<?php echo $value[id]?>"
                                                href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-delete">
                                                 <i class="am-icon-trash"></i> 删除
                                             </a>
+                                            <?php } ?>
                                         </td>
                                     </tr>
                                     <?php } ?>

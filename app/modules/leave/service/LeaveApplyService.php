@@ -10,7 +10,8 @@ use app\leave\service\LeaveService;
 /**
  * 假期服务
  * ----------------
- * @author yuanfu<yuanf@pvc123.com>
+ * @author YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class LeaveApplyService extends CommonService {
 
@@ -29,7 +30,7 @@ class LeaveApplyService extends CommonService {
                 $this->modelDao->where('status', $search->status);
             }
             if (!empty($search->name)) {
-                $this->modelDao->where('name', 'LIKE', "{$search->name}%");
+                $this->modelDao->where('name', 'LIKE', "%{$search->name}%");
             }
         }
     }

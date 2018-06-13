@@ -17,13 +17,13 @@
                     <div class="widget am-cf">
                         <div class="widget-head am-cf">
                             <div class="widget-title  am-cf"><?php echo $optTitle?></div>
-    
+                            <?php if ($isAdmin || in_array($add_url,$permissions) ) {?>
                             <div class="am-btn-toolbar">
                                 <div class="am-btn-group am-btn-group-xs">
-                                    <a href="/admin/manager/add" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</a>
+                                    <a href="<?php echo $add_url?>" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</a>
                                 </div>
                             </div>
-                            
+                            <?php } ?>
                         </div>
                         <div class="widget-body  am-fr">
                             
@@ -44,6 +44,7 @@
                                         <th>最后登录时间</th>
                                         <th>最后登录IP</th>
                                         <th>状态</th>
+                                        <th>是否超级管理员</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
@@ -77,15 +78,28 @@
                                             </div>
                                         </td>
                                         <td>
+                                            <div class="tpl-switch">
+                                                <input type="checkbox" data-type="switch"
+                                                       data-url="/admin/manager/enable" data-id="<?php echo $value[id]?>" data-field="is_admin"
+                                                       <?php if ( $value[is_admin] == 1 ) { ?>checked<?php } ?>
+                                                       class="ios-switch tpl-switch-btn am-margin-top-xs">
+                                                <div class="tpl-switch-btn-view"><div></div></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <?php if ($isAdmin || in_array($edit_url,$permissions) ) {?>
                                             <a href="<?php echo $edit_url?>?id=<?php echo $value[id]?>"
                                                class="am-btn am-btn-primary am-btn-xxs am-round"
                                                href="javascript:;">
                                                 <i class="am-icon-pencil"></i> 编辑
                                             </a>
+                                            <?php } ?>
+                                            <?php if ($isAdmin || in_array($delete_url,$permissions) ) {?>
                                             <a data-url="<?php echo $delete_url?>?id=<?php echo $value[id]?>"
                                                href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-delete">
                                                 <i class="am-icon-trash"></i> 删除
                                             </a>
+                                            <?php } ?>
                                         </td>
                                     </tr>
                                     <?php } ?>

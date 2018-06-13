@@ -11,6 +11,7 @@ use app\goods\service\GoodsService;
  * 物品申请服务
  * ----------------
  * @author yuanfu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class GoodsApplyService extends CommonService {
 
@@ -32,7 +33,7 @@ class GoodsApplyService extends CommonService {
                 $this->modelDao->where('status', $search->status);
             }
             if (!empty($search->name)) {
-                $this->modelDao->where('name', 'LIKE', "{$search->name}%");
+                $this->modelDao->where('name', 'LIKE', "%{$search->name}%");
             }
             if (!empty($search->time_begin)) {
                 $this->modelDao->where('addtime', '>=', $search->time_begin);

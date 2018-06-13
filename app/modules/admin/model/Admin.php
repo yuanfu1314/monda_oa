@@ -2,7 +2,8 @@
 /**
  * 管理员用户实体模型
  * ------------
- * @author yangjian<yangjian102621@gmail.com>
+ * @author YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-06
  */
 
 namespace app\admin\model;

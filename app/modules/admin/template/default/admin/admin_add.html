@@ -68,6 +68,13 @@
                                                                               data-type="icheck"> 禁用</label>
                                     </div>
                                     
+                                    <div class="am-form-group">
+                                        <label>是否超级管理员：</label>
+                                        <label class="am-radio-inline"><input type="radio" value="1" name="data[is_admin]"
+                                                                              data-type="icheck" checked> 启用</label>
+                                        <label class="am-radio-inline"><input type="radio" value="0" name="data[is_admin]"
+                                                                              data-type="icheck"> 禁用</label>
+                                    </div>
     
                                     <div class="am-form-group">
                                         <button type="submit" class="am-btn am-btn-primary">提交保存</button>

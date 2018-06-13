@@ -47,15 +47,19 @@
                                         <td>{$value[addtime]}</td>
                                         <td>{$value[updatetime]}</td>
                                         <td>
+                                            {permission $edit_url $permissions}
                                             <a href="{$edit_url}?id={$value[id]}"
                                                class="am-btn am-btn-primary am-btn-xxs am-round"
                                                href="javascript:;">
                                                 <i class="am-icon-pencil"></i> 编辑
                                             </a>
+                                            {/permission}
+                                            {permission $delete_url $permissions}
                                             <a data-url="{$delete_url}?id={$value[id]}"
                                                href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-delete">
                                                 <i class="am-icon-trash"></i> 删除
                                             </a>
+                                            {/permission}
                                         </td>
                                     </tr>
                                     {/loop}

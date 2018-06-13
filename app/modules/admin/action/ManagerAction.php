@@ -11,7 +11,8 @@ use herosphp\utils\JsonResult;
 
 /**
  * 管理员控制器
- * @author  yangjian<yangjian102621@gmail.com>
+ * @author  YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class ManagerAction extends CommonAction {
 
@@ -115,7 +116,7 @@ class ManagerAction extends CommonAction {
         }
         // 这里防止线上 demo 别人不小心修改了密码，导致其他人无法登录这里直接返回成功了。
         JsonResult::success(Lang::MD_PASS_SUCCESS);
-        $newpassword = $request->getParameter('newpassword','trim');
+        $newpassword = $request->getParameter('newpassword', 'trim');
         $password = genPassword($newpassword, $this->loginUser->getSalt());
         if ($this->service->set('password', $password, $this->loginUser->getId())) {
             $this->service->logout();
@@ -125,4 +126,5 @@ class ManagerAction extends CommonAction {
         }
 
     }
+
 }

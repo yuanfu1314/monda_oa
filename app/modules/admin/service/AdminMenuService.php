@@ -9,7 +9,8 @@ use herosphp\utils\ArrayUtils;
 
 /**
  * 管理员菜单服务
- * @author yangjian<yangjian102621@gmail.com>
+ * @author YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-06
  */
 class AdminMenuService extends CommonService {
 

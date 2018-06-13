@@ -12,8 +12,8 @@ use herosphp\utils\JsonResult;
 use app\admin\action\CommonAction;
 
 /**
- * 假期申请控制器
- * @author  yuanfu<yuanf@pvc123.com>
+ * 办公室申请控制器
+ * @author  YuanFu<yuanf@pvc123.com>
  * @date 2018-06-03
  */
 class AuditAction extends CommonAction {
@@ -60,7 +60,7 @@ class AuditAction extends CommonAction {
         $this->assign('offices', $offices);
         $this->setOpt($this->actionTitle.'列表');
         if ($is_ajax == true) {
-            $this->setView("office/audit_index_list");
+            $this->setView("office/apply_index_list");
         }else{
             $this->setView("office/audit_index");
         }
@@ -85,7 +85,7 @@ class AuditAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function rejectUpdate(HttpRequest $request) {
-        $data = $request->getParameter('data','trim');
+        $data = $request->getParameter('data', 'trim');
         $id = $request->getParameter('id', 'intval');
         $data['status'] = $request->getParameter('status', 'intval');
         $data['auditor_id'] = $this->loginUser->getId();

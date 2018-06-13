@@ -155,13 +155,18 @@
 
 		        var url = $(this).data("url");
 		        var id = $(this).data("id");
+		        var field = $(this).data("field");
+		        if (field.length < 1) {
+		        	field = 'enable'
+		        }
 		        var enable = 0;
 		        if(this.checked) {
 			        enable = 1;
 		        }
 		        $.post(url, {
 			        id : id,
-			        enable : enable
+			        enable : enable,
+			        field : field
 		        }, function (res) {
 			        if (res.code == "000") {
 				        exports.okMessage("操作成功!");
@@ -468,14 +473,14 @@
 			//回传后台
 			$.ajax({
 				url: url,
-				type: "POST",
+				type: "GET",
 				dataType:"html",
 				data: {search_data:exports.getSearchData(), is_ajax: true},
 				success: function(return_data){
 				  	$("#list_table").html(return_data);
+				  	
 				}
 			});
 		});
-		
     
     });

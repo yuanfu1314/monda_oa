@@ -70,7 +70,7 @@ class ApplyAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function add(HttpRequest $request) {
-        $goods = $this->loadGoods();
+        $goods = $this->service->loadGoods();
         $this->assign('goods', $goods);
         $this->setOpt($this->actionTitle);
         $this->setView('goods/apply_add');

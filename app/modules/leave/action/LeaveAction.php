@@ -12,7 +12,8 @@ use app\admin\action\CommonAction;
 
 /**
  * 假期控制器
- * @author  yuanfu<yuanf@pvc123.com>
+ * @author  YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class LeaveAction extends CommonAction {
 
@@ -55,7 +56,7 @@ class LeaveAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function insert(HttpRequest $request) {
-        $data = $request->getParameter('data','trim');
+        $data = $request->getParameter('data', 'trim');
         //leave_type是否唯一
         $unique = parent::checkExist('leave_type', $data['leave_type']);
         if ($unique == true) {
@@ -69,7 +70,7 @@ class LeaveAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function update(HttpRequest $request) {
-        $data = $request->getParameter('data','trim');
+        $data = $request->getParameter('data', 'trim');
         $id = $request->getParameter('id', 'intval');
         //leave_type是否唯一
         $unique = parent::checkExist('leave_type', $data['leave_type'], 'id', '!=', $id);
@@ -90,7 +91,7 @@ class LeaveAction extends CommonAction {
             JsonResult::result(JsonResult::CODE_FAIL, Lang::NO_RECOEDS);
         }
         $service = Loader::service(LeaveApplyService::class);
-        $item = $service->fields('id')->where('leave_type_id',$id)->findOne();
+        $item = $service->fields('id')->where('leave_type_id', $id)->findOne();
         if (!empty($item['id'])) {
             JsonResult::result(JsonResult::CODE_FAIL, Lang::DELETE_EXISTS_FAIL);
         }

@@ -27,7 +27,7 @@ $config = array(
      */
     'temp_rules' => array(
         //权限
-        '/{permission\s+\$(.*?)\s+\$([0-9a-z_]{1,})\s*}/i' => '<?php if ($isAdmin || in_array(strtolower(\$${1}),\$${2}) ) {?>',
+        '/{permission\s+\$(.*?)\s+\$([0-9a-z_]{1,})\s*}/i' => '<?php if ($isAdmin || in_array(\$${1},\$${2}) ) {?>',
         '/{\/permission}/i' => '<?php } ?>',
     ),
 
@@ -43,7 +43,6 @@ $config = array(
 
     //短链接映射
     'url_mapping_rules' => array(
-        '^\/newsdetail-(\d+)\/?$' => '/news/article/detail/?id=${1}',
         '^\/admin\/?$' => '/admin/index/login',
         '^\/app\/index.php$' => '/admin/login/index',
     ),
@@ -51,8 +50,8 @@ $config = array(
     //以上都框架内置的配置变量，请不要删除，下面是用户自定义的变量可以添加或者删除
     'site_name' => '简易自动化办公系统',
     'site_desc' => '简易自动化办公系统',
-    'site_author' => 'yangjian102621@gmail.com',
-    'site_copyright' => '2016 &copy; HerosPHP by BlackFox',
+    'site_author' => 'yuanf@pvc123.com',
+    'site_copyright' => '2018 &copy; HerosPHP by BlackFox',
 
     'rsa_private_key' => __DIR__ . '/keys/rsa_private_key.pem',
     'rsa_public_key' => __DIR__ . '/keys/rsa_public_key.pem',

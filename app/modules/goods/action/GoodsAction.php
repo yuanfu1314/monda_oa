@@ -88,14 +88,14 @@ class GoodsAction extends CommonAction {
      * @param HttpRequest $request
      * @param 回调函数 $callback
      */
-    public function delete( HttpRequest $request, $callback = null) {
+    public function delete(HttpRequest $request, $callback = null) {
 
         $id = $request->getParameter('id', 'trim');
         if ( empty($id) ) {
             JsonResult::result(JsonResult::CODE_FAIL, Lang::NO_RECOEDS);
         }
         $service = Loader::service(GoodsApplyService::class);
-        $item = $service->fields('id')->where('goods_id',$id)->findOne();
+        $item = $service->fields('id')->where('goods_id', $id)->findOne();
         if (!empty($item['id'])) {
             JsonResult::result(JsonResult::CODE_FAIL, Lang::DELETE_GOODS_FAIL);
         }

@@ -30,7 +30,7 @@
                 
                 <ul class="sidebar-nav sidebar-nav-sub">
                     <?php foreach ( $value[subs] as $val ) { ?>
-                    <?php if ($isAdmin || in_array(strtolower($val[url]),$permissions) ) {?>
+                    <?php if ($isAdmin || in_array($val[url],$permissions) ) {?>
                     <li class="sidebar-nav-link">
                         <a href="<?php echo $val[url]?>">
                             <span class="am-icon-angle-right sidebar-nav-link-logo"></span> <span><?php echo $val[name]?></span>

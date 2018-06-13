@@ -57,7 +57,7 @@ class AuditAction extends CommonAction {
         $this->assign('received_url', '/goods/apply/received');
         $this->setOpt($this->actionTitle.'列表');
         if ($is_ajax == true) {
-            $this->setView("goods/audit_index_list");
+            $this->setView("goods/apply_index_list");
         }else{
             $this->setView("goods/audit_index");
         }

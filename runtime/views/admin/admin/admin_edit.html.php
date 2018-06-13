@@ -65,6 +65,19 @@
                                                    <?php if ( $item[enable] == 0 ) { ?>checked<?php } ?>
                                                    data-type="icheck"> 禁用</label>
                                     </div>
+                                    <div class="am-form-group">
+                                        <label>是否超级管理员：</label>
+                                        <label class="am-radio-inline">
+                                            <input type="radio" value="1"
+                                                   name="data[is_admin]"
+                                                   <?php if ( $item[is_admin] == 1 ) { ?>checked<?php } ?>
+                                                   data-type="icheck" checked> 是</label>
+                                        <label class="am-radio-inline">
+                                            <input type="radio" value="0"
+                                                   name="data[is_admin]"
+                                                   <?php if ( $item[is_admin] == 0 ) { ?>checked<?php } ?>
+                                                   data-type="icheck"> 否</label>
+                                    </div>
 
 
                                     <div class="am-form-group">

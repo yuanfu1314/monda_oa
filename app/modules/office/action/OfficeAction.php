@@ -12,7 +12,8 @@ use app\admin\action\CommonAction;
 
 /**
  * 办公室控制器
- * @author  yuanfu<yuanf@pvc123.com>
+ * @author  YuanFu<yuanf@pvc123.com>
+ * @date 2018-06-13
  */
 class OfficeAction extends CommonAction {
 
@@ -59,7 +60,7 @@ class OfficeAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function insert(HttpRequest $request) {
-        $data = $request->getParameter('data','trim');
+        $data = $request->getParameter('data', 'trim');
         //office是否唯一
         $unique = parent::checkExist('office', $data['office']);
         if ($unique == true) {
@@ -73,7 +74,7 @@ class OfficeAction extends CommonAction {
      * @param HttpRequest $request
      */
     public function update(HttpRequest $request) {
-        $data = $request->getParameter('data','trim');
+        $data = $request->getParameter('data', 'trim');
         $id = $request->getParameter('id', 'intval');
         //office是否唯一
         $unique = parent::checkExist('office', $data['office'], 'id', '!=', $id);
