@@ -1,0 +1,5 @@
+[2018-06-08 17:27:47] UPDATE announcement SET `enable`='0' WHERE id = '2'
+[2018-06-08 17:28:15] UPDATE announcement SET `enable`='1' WHERE id = '2'
+[2018-06-08 17:31:16] INSERT INTO announcement(`content`, `staff_id`, `name`, `addtime`, `updatetime`) VALUES('继续发扬光大   12333333333','1','李白','2018-06-08 17:31:16','2018-06-08 17:31:16')
+[2018-06-08 17:33:45] UPDATE announcement SET `enable`='1' WHERE id = '3'
+[2018-06-08 18:13:05] UPDATE announcement SET `enable`='0' WHERE id = '2'

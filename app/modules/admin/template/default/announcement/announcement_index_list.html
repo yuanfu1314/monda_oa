@@ -1,0 +1,69 @@
+
+                            
+                            <div class="am-g">
+                                <form id="cList">
+                                <table width="100%" class="am-table am-table-compact am-table-hover tpl-table-black am-table-bordered" id="clist-table">
+                                    <thead>
+                                    <tr>
+                                        <th class="list-checkbox-th">
+                                            <label class="am-checkbox-inline">
+                                                <input type="checkbox" data-type="icheck" id="check-all" value="0">
+                                            </label>
+                                        </th>
+                                        <th>公告内容</th>
+                                        <th>发布人</th>
+                                        <th>状态</th>
+                                        <th>创建时间</th>
+                                        <th>修改时间</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                    {if empty($items)}
+                                    <tr><td class="empty-td">暂无记录.</td></tr>
+                                    {/if}
+                                    
+                                    {loop $items $value}
+                                    <tr class="gradeX">
+                                        <td class="list-checkbox-th">
+                                            <label class="am-checkbox-inline">
+                                                <input type="checkbox" data-type="icheck" name="ids[]"
+                                                       value="{$value[id]}">
+                                            </label>
+                                        </td>
+                                        <td>{$value[content]}</td>
+                                        <td>{$value[name]}</td>
+                                        <td>
+                                            <div class="tpl-switch">
+                                                <input type="checkbox" data-type="switch"
+                                                    data-url="/admin/announcement/enable" data-id="{$value[id]}"
+                                                    {if $value[enable] == 1} checked
+                                                    {/if}
+                                                    class="ios-switch tpl-switch-btn am-margin-top-xs">
+                                                <div class="tpl-switch-btn-view"><div></div></div>
+                                            </div>
+                                        </td>
+                                        <td>{$value[addtime]}</td>
+                                        <td>{$value[updatetime]}</td>
+                                        <td>
+                                            <a href="{$edit_url}?id={$value[id]}"
+                                               class="am-btn am-btn-primary am-btn-xxs am-round"
+                                               href="javascript:;">
+                                                <i class="am-icon-pencil"></i> 编辑
+                                            </a>
+                                            <a data-url="{$delete_url}?id={$value[id]}"
+                                               href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-delete">
+                                                <i class="am-icon-trash"></i> 删除
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {/loop}
+                                    <!-- more data -->
+                                    </tbody>
+                                </table>
+                                </form>
+                            </div>
+                            <div class="am-g am-cf">
+                                <div class="am-fr" data-rel="pAjax">{$pageMenu}</div>
+                            </div>

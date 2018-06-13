@@ -1,0 +1,8 @@
+[2018-05-31 17:18:27] INSERT INTO admin_role(`name`, `addtime`, `updatetime`) VALUES('测试','2018-05-31 17:18:27','2018-05-31 17:18:27')
+[2018-05-31 17:23:23] INSERT INTO admin_user(`username`, `name`, `password`, `enable`, `role_ids`, `salt`, `addtime`, `updatetime`) VALUES('测试','1005','858f829706393895319da9ce01533e8c','1','"1"','015b0fbf0b05766830','2018-05-31 17:23:23','2018-05-31 17:23:23')
+[2018-05-31 17:27:20] INSERT INTO admin_user(`username`, `name`, `password`, `enable`, `role_ids`, `salt`, `addtime`, `updatetime`) VALUES('1005','测试','51606ea6d8a2af910905332b44db6e60','1','"1"','015b0fbff8023ead30','2018-05-31 17:27:20','2018-05-31 17:27:20')
+[2018-05-31 17:45:47] DELETE FROM admin_user  WHERE id = '5'
+[2018-05-31 18:26:17] INSERT INTO admin_user(`username`, `name`, `password`, `enable`, `role_ids`, `salt`, `addtime`, `updatetime`) VALUES('1005','测试','98e9c76cda6caacb64b31cc9c0f5aeb7','1','"1"','015b0fcdc905d5e198','2018-05-31 18:26:17','2018-05-31 18:26:17')
+[2018-05-31 18:26:42] INSERT INTO leave_type(`leave_type`, `remark`, `addtime`, `updatetime`) VALUES('婚假','在法定年龄内结婚（以结婚证为准），可给予3天有薪假期','2018-05-31 18:26:42','2018-05-31 18:26:42')
+[2018-05-31 18:27:34] INSERT INTO leave_type(`leave_type`, `remark`, `addtime`, `updatetime`) VALUES('婚假','在法定年龄内结婚（以结婚证为准），可给予3天有薪假期','2018-05-31 18:27:34','2018-05-31 18:27:34')
+[2018-05-31 18:27:42] DELETE FROM leave_type  WHERE id = '2'

@@ -1,0 +1,95 @@
+{include admin.inc.header}
+
+<body>
+
+<div class="am-g tpl-g">
+
+    {include admin.inc.top}
+
+
+    {include admin.inc.leftmenu}
+    
+    <!-- content goes here -->
+    <div class="tpl-content-wrapper">
+        <div class="row-content am-cf">
+            <div class="row">
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title  am-cf">{$optTitle}</div>
+                        </div>
+                        
+                        <div class="widget-body  am-fr">
+                            
+                            <div class="am-u-sm-12">
+                                <form data-action="{$insert_url}" class="am-form" id="cAdd"
+                                      data-location="{$index_url}">
+                                    <div class="am-form-group">
+                                        <select name="data[leave_type_id]" class="am-input-sm"
+                                                data-am-selected="{btnWidth:'100px',btnSize:'sm'}"
+                                                placeholder="假期类型">
+                                            {loop $leave_types $key $val}
+                                            <option value="{$val[id]}">{$val['leave_type']}</option>
+                                            {/loop}
+                                        </select>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label>假期开始时间：</label>
+                                        <div class="am-input-group">
+                                            <input type="text" id="time_begin" name="data[time_begin]" placeholder="请选择时间"  required/>
+                                            <a class="am-input-group-btn">
+                                                <button class="am-btn am-btn-default" type="button">
+                                                    <i class="icon-th am-icon-clock-o"></i></button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label>假期结束时间：</label>
+                                        <div class="am-input-group">
+                                            <input type="text" id="time_end" name="data[time_end]" placeholder="请选择时间" required/>
+                                            <a class="am-input-group-btn">
+                                                <button class="am-btn am-btn-default" type="button">
+                                                    <i class="icon-th am-icon-clock-o"></i></button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label class="am-form-label">休假时长（以小时记 或者 8小时为一天）：</label>
+                                        <input type="number" name="data[duration]" placeholder="输入休假时长" max="800" required/>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label class="am-form-label">申请理由：</label>
+                                        <input type="text" name="data[reason]" placeholder="申请理由" required/>
+                                    </div>
+    
+                                    <div class="am-form-group">
+                                        <button type="submit" class="am-btn am-btn-primary">提交保存</button>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="am-u-lg-12">
+                    {include admin.inc.footer}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{include admin.inc.res}
+<script>
+    seajs.use("leave", function (exports) {
+        
+    });
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+[2018-06-04 13:35:32] DELETE FROM leave_type  WHERE id = '1'
+[2018-06-04 14:14:40] INSERT INTO office(`office`, `remark`, `addtime`, `updatetime`) VALUES('洽谈室1','123','2018-06-04 14:14:40','2018-06-04 14:14:40')
+[2018-06-04 14:37:08] UPDATE office SET `remark`='123', `updatetime`='2018-06-04 14:37:08' WHERE id = '1'
+[2018-06-04 14:37:21] UPDATE office SET `remark`='123', `updatetime`='2018-06-04 14:37:21' WHERE id = '1'
+[2018-06-04 14:41:14] UPDATE office SET `office`='洽谈室2', `remark`='123', `updatetime`='2018-06-04 14:41:14' WHERE id = '1'
+[2018-06-04 14:41:20] UPDATE office SET `office`='洽谈室2', `remark`='123123', `updatetime`='2018-06-04 14:41:20' WHERE id = '1'
+[2018-06-04 14:41:39] INSERT INTO office(`office`, `remark`, `addtime`, `updatetime`) VALUES('洽谈室1','12333','2018-06-04 14:41:39','2018-06-04 14:41:39')
+[2018-06-04 14:51:17] DELETE FROM office  WHERE id = '1'
+[2018-06-04 17:42:50] INSERT INTO office(`office`, `remark`, `addtime`, `updatetime`) VALUES('会议室1','1','2018-06-04 17:42:50','2018-06-04 17:42:50')
+[2018-06-04 17:43:02] INSERT INTO office(`office`, `remark`, `addtime`, `updatetime`) VALUES('洽谈室1','1','2018-06-04 17:43:02','2018-06-04 17:43:02')
+[2018-06-04 17:43:15] UPDATE office SET `office`='会议室1', `remark`='会议1', `updatetime`='2018-06-04 17:43:15' WHERE id = '1'
+[2018-06-04 17:51:05] INSERT INTO office_apply(`office`, `time_begin`, `time_end`, `reason`, `staff_id`, `name`, `addtime`, `updatetime`) VALUES('会议室1','2018-06-04 18:00:00','2018-06-04 18:30:00','11','1','李白','2018-06-04 17:51:05','2018-06-04 17:51:05')
+[2018-06-04 18:01:04] INSERT INTO office_apply(`office_id`, `time_begin`, `time_end`, `reason`, `office`, `staff_id`, `name`, `addtime`, `updatetime`) VALUES('1','2018-06-04 19:00:00','2018-06-04 19:30:00','123','会议室1','1','李白','2018-06-04 18:01:04','2018-06-04 18:01:04')
+[2018-06-04 18:05:04] INSERT INTO office_apply(`office_id`, `time_begin`, `time_end`, `reason`, `office`, `staff_id`, `name`, `addtime`, `updatetime`) VALUES('1','2018-06-04 18:30:00','2018-06-04 19:30:00','123','会议室1','1','李白','2018-06-04 18:05:04','2018-06-04 18:05:04')

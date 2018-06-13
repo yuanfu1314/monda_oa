@@ -1,0 +1,72 @@
+{include admin.inc.header}
+
+<body>
+
+<div class="am-g tpl-g">
+
+    {include admin.inc.top}
+
+
+    {include admin.inc.leftmenu}
+    
+    <!-- content goes here -->
+    <div class="tpl-content-wrapper">
+        <div class="row-content am-cf">
+            <div class="row">
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title  am-cf" th:text="${title}"></div>
+                        </div>
+                        <div class="widget-body  am-fr">
+                            <div class="am-g">
+                                <div class="am-u-sm-3 am-u-md-3">
+                                    员工编号： {$loginUser->getUserName()}
+                                </div>
+                            </div>
+                            <div class="am-g">
+                                <div class="am-u-sm-3 am-u-md-3">
+                                    姓名： {$loginUser->getName()}
+                                </div>
+                            </div>
+                            <div class="am-g">
+                                <div class="am-u-sm-3 am-u-md-3">
+                                   手机号码： {$loginUser->getTelephone()}
+                                </div>
+                            </div>
+                            <div class="am-g">
+                                <div class="am-u-sm-3 am-u-md-3">
+                                    部门： {$loginUser->getDepartment()}
+                                </div>
+                            </div>
+                            <div class="am-g">
+                                <div class="am-u-sm-3 am-u-md-3">
+                                    职位： {$loginUser->getPosition()}
+                                </div>
+                            </div>
+                            <div class="am-g">
+                                <div class="am-u-sm-3 am-u-md-3">
+                                    直属上司： {$loginUser->getLeaderName()}
+                                </div>        
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="am-u-lg-12">
+                    <div th:replace="admin/include :: footer">Monda Group 2018</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{include admin.inc.res}
+
+{res:js common/js/vue.js}
+
+
+</body>
+
+</html>

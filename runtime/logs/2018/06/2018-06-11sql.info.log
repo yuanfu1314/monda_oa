@@ -1,0 +1,2 @@
+[2018-06-11 08:44:11] INSERT INTO office(`office`, `remark`, `addtime`, `updatetime`) VALUES('洽谈室2','123123','2018-06-11 08:44:11','2018-06-11 08:44:11')
+[2018-06-11 08:46:57] INSERT INTO office_apply(`office_id`, `time_begin`, `time_end`, `reason`, `office`, `staff_id`, `name`, `addtime`, `updatetime`) VALUES('1','2018-06-11 09:00:00','2018-06-11 09:30:00','1111','会议室1','1','李白','2018-06-11 08:46:57','2018-06-11 08:46:57')

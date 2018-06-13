@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>您当前没有操作权限</title>
+    <style>
+        body {background: #e9ecf3;}
+    </style>
+
+</head>
+<body>
+{include admin.inc.footer}
+<script>
+    seajs.use('common',function (common) {
+        layer.alert('<p style="color: #f00;">您当前没有相应的操作权限</p>',{title:"温馨提示",end:function(){
+            //回退页面
+            history.back();
+        }});
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+                            
+                            <div class="am-g">
+                                <form id="cList">
+                                <table width="100%" class="am-table am-table-compact am-table-hover tpl-table-black am-table-bordered" id="clist-table">
+                                    <thead>
+                                    <tr>
+                                        <th class="list-checkbox-th">
+                                            <label class="am-checkbox-inline">
+                                                <input type="checkbox" data-type="icheck" id="check-all" value="0">
+                                            </label>
+                                        </th>
+                                        <th>权限名称</th>
+                                        <th>权限分组</th>
+                                        <th>权限标识</th>
+                                        <th>添加时间</th>
+                                        <th>更新时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    {if empty($items)}
+                                    <tr><td class="empty-td">暂无记录.</td></tr>
+                                    {/if}
+
+                                    {loop $items $value}
+                                    
+                                    <tr class="gradeX">
+                                        <td class="list-checkbox-th">
+                                            <label class="am-checkbox-inline">
+                                                <input type="checkbox" data-type="icheck" name="ids[]"
+                                                       value="{$value[id]}">
+                                            </label>
+                                        </td>
+                                        <td>{$value[name]}</td>
+                                        <td>{$value[groupName]}</td>
+                                        <td>{$value[pkey]}</td>
+                                        <td>{$value[addtime]}</td>
+                                        <td>{$value[updatetime]}</td>
+                                        <td>
+                                            <a class="am-btn am-btn-primary am-btn-xxs am-round item-edit"
+                                               data-id="{$value[id]}"
+                                               href="javascript:;">
+                                                <i class="am-icon-pencil"></i> 编辑
+                                            </a>
+                                            <a data-url="{$delete_url}?id={$value[id]}"
+                                               href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-delete">
+                                                <i class="am-icon-trash"></i> 删除
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {/loop}
+                                    <!-- more data -->
+                                    </tbody>
+                                </table>
+                                </form>
+                            </div>
+
+                            <div class="am-g am-cf">
+                                <div class="am-fr">{$pageMenu}</div>
+                            </div>

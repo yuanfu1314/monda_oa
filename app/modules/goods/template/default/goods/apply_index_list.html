@@ -1,0 +1,78 @@
+
+                            
+                            <div class="am-g">
+                                <form id="cList">
+                                <table width="100%" class="am-table am-table-compact am-table-hover tpl-table-black am-table-bordered" id="clist-table">
+                                    <thead>
+                                    <tr>
+                                        <th class="list-checkbox-th">
+                                            <label class="am-checkbox-inline">
+                                                <input type="checkbox" data-type="icheck" id="check-all" value="0">
+                                            </label>
+                                        </th>
+                                        <th>物品</th>
+                                        <th>员工姓名</th>
+                                        <th>创建时间</th>
+                                        <th>理由</th>
+                                        <th>申请状态</th>
+                                        <th>审核人员姓名</th>
+                                        <th>审核反馈</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                    {if empty($items)}
+                                    <tr><td class="empty-td">暂无记录.</td></tr>
+                                    {/if}
+                                    
+                                    {loop $items $value}
+                                    <tr class="gradeX">
+                                        <td class="list-checkbox-th">
+                                            <label class="am-checkbox-inline">
+                                                <input type="checkbox" data-type="icheck" name="ids[]"
+                                                       value="{$value[id]}">
+                                            </label>
+                                        </td>
+                                        <td>{$value[goods]}</td>
+                                        <td>{$value[name]}</td>
+                                        <td>{$value[addtime]}</td>
+                                        <td>{$value[reason]}</td>
+                                        <td>{$value[status]}</td>
+                                        <td>{$value[auditor]}</td>
+                                        <td>{$value[comment]}</td>
+                                        <td>
+                                            {if $action == 'apply'}
+                                            {permission $cancel_url $permissions}
+                                            <a data-url="{$cancel_url}?id={$value[id]}"
+                                               href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round item-cancel">
+                                                <i class="am-icon-close"></i> 取消
+                                            </a>
+                                            {/permission}
+                                            {else}
+                                            {if $value[is_show]}
+                                            {permission $received_url $permissions}
+                                            <a data-url="{$received_url}?id={$value[id]}"
+                                               href="javascript:;" class="am-btn am-btn-success am-btn-xxs am-round item-confirm">
+                                                <i class="am-icon-check"></i> 确认领取
+                                            </a>
+                                            {/permission}
+                                            {permission $reject_url $permissions}
+                                            <a href="{$reject_url}?id={$value[id]}"
+                                               href="javascript:;" class="am-btn am-btn-danger am-btn-xxs am-round">
+                                                <i class="am-icon-ban"></i> 拒绝申请
+                                            </a>
+                                            {/permission}
+                                            {/if}
+                                            {/if}
+                                        </td>
+                                    </tr>
+                                    {/loop}
+                                    <!-- more data -->
+                                    </tbody>
+                                </table>
+                                </form>
+                            </div>
+                            <div class="am-g am-cf">
+                                <div class="am-fr" data-rel="pAjax">{$pageMenu}</div>
+                            </div>

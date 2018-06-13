@@ -1,0 +1,29 @@
+[2018-06-05 08:55:48] UPDATE office_apply SET `status`='3' WHERE id = '1'
+[2018-06-05 17:40:56] INSERT INTO office_apply(`office_id`, `time_begin`, `time_end`, `reason`, `office`, `staff_id`, `name`, `addtime`, `updatetime`) VALUES('1','2018-06-06 00:00:00','2018-06-06 00:30:00','222','会议室1','1','李白','2018-06-05 17:40:56','2018-06-05 17:40:56')
+[2018-06-05 18:50:46] UPDATE office_apply SET `comment`='123', `status`='4', `auditor_id`='1', `auditor`='李白', `updatetime`='2018-06-05 18:50:46' WHERE id = '2'
+[2018-06-05 20:04:53] INSERT INTO goods(`goods`, `remark`, `addtime`, `updatetime`) VALUES('笔','1','2018-06-05 20:04:53','2018-06-05 20:04:53')
+[2018-06-05 20:06:57] INSERT INTO goods(`goods`, `remark`, `addtime`, `updatetime`) VALUES('笔','123','2018-06-05 20:06:57','2018-06-05 20:06:57')
+[2018-06-05 20:07:12] INSERT INTO goods(`goods`, `remark`, `addtime`, `updatetime`) VALUES('笔记本','一次一本','2018-06-05 20:07:12','2018-06-05 20:07:12')
+[2018-06-05 20:11:03] UPDATE goods SET `goods`='笔', `remark`='尽量换笔芯', `updatetime`='2018-06-05 20:11:03' WHERE id = '1'
+[2018-06-05 20:11:11] INSERT INTO goods(`goods`, `remark`, `addtime`, `updatetime`) VALUES('123','1233','2018-06-05 20:11:11','2018-06-05 20:11:11')
+[2018-06-05 20:11:18] DELETE FROM goods  WHERE id = '3'
+[2018-06-05 20:44:43] INSERT INTO goods_apply(`goods`, `reason`, `staff_id`, `name`, `addtime`, `updatetime`) VALUES(NULL,'123','1','李白','2018-06-05 20:44:43','2018-06-05 20:44:43')
+[2018-06-05 20:46:52] INSERT INTO goods_apply(`goods_id`, `reason`, `goods`, `staff_id`, `name`, `addtime`, `updatetime`) VALUES('1','123','笔','1','李白','2018-06-05 20:46:52','2018-06-05 20:46:52')
+[2018-06-05 21:01:06] UPDATE goods_apply SET `status`='3' WHERE id = '1'
+[2018-06-05 21:01:16] UPDATE goods_apply SET `comment`='123', `status`='2', `auditor_id`='1', `auditor`='李白', `updatetime`='2018-06-05 21:01:16' WHERE id = '1'
+[2018-06-05 21:07:25] UPDATE goods_apply SET `status`='3' WHERE id = '1'
+[2018-06-05 21:11:01] UPDATE goods_apply SET `status`='3' WHERE id = '1'
+[2018-06-05 21:27:49] UPDATE goods_apply SET `status`='3' WHERE id = '1'
+[2018-06-05 21:28:53] UPDATE goods_apply SET `status`='1' WHERE id = '1'
+[2018-06-05 21:29:07] UPDATE goods_apply SET `status`='1' WHERE id = '1'
+[2018-06-05 21:30:50] UPDATE goods_apply SET `status`='3' WHERE id = '1'
+[2018-06-05 21:30:57] UPDATE goods_apply SET `status`='1' WHERE id = '1'
+[2018-06-05 21:33:04] UPDATE goods_apply SET `status`='1' WHERE id = '1'
+[2018-06-05 21:33:45] UPDATE goods_apply SET `status`='1' WHERE id = '1'
+[2018-06-05 21:34:28] UPDATE goods_apply SET `status`='1' WHERE id = '1'
+[2018-06-05 21:34:42] UPDATE goods_apply SET `status`='3' WHERE id = '1'
+[2018-06-05 21:34:46] UPDATE goods_apply SET `status`='1' WHERE id = '1'
+[2018-06-05 21:35:13] UPDATE goods_apply SET `status`='1' WHERE id = '1'
+[2018-06-05 21:35:16] UPDATE goods_apply SET `status`='3' WHERE id = '1'
+[2018-06-05 21:35:21] UPDATE goods_apply SET `status`='1' WHERE id = '1'
+[2018-06-05 21:35:24] UPDATE goods_apply SET `status`='3' WHERE id = '1'
