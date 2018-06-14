@@ -180,7 +180,7 @@
         /**
          * 初始化删除按钮操作
          */
-        $(".item-delete").on("click", function (e) {
+        $(document).on("click", ".item-delete", function (e) {
             var url = $(this).data("url");
             JDialog.confirm({
                 title : "删除提示",
@@ -212,7 +212,7 @@
         /**
          * 初始化取消按钮操作
          */
-        $(".item-cancel").on("click", function (e) {
+        $(document).on("click", ".item-cancel", function (e) {
             var url = $(this).data("url");
             JDialog.confirm({
                 title : "取消提示",
@@ -244,7 +244,7 @@
         /**
          * 初始化确认按钮操作
          */
-        $(".item-confirm").on("click", function (e) {
+        $(document).on("click", ".item-confirm", function (e) {
             var url = $(this).data("url");
             JDialog.confirm({
                 title : "确认提示",
@@ -285,7 +285,7 @@
         });
         
         //批量删除数据
-        $("#del-all").on("click", function () {
+        $(document).on("click", "#del-all", function () {
     
             var ids = [];
             var url = $(this).data("url");
@@ -473,7 +473,7 @@
 			//回传后台
 			$.ajax({
 				url: url,
-				type: "GET",
+				type: "POST",
 				dataType:"html",
 				data: {search_data:exports.getSearchData(), is_ajax: true},
 				success: function(return_data){

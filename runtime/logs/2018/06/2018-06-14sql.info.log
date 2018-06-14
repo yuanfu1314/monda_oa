@@ -1,0 +1,4 @@
+[2018-06-14 08:21:10] UPDATE admin_user SET `last_login_time`='2018-06-14 08:21:10', `last_login_ip`='172.0.0.1' WHERE id = '1'
+[2018-06-14 08:23:41] UPDATE admin_permissions SET `pgroup`='user', `name`='修改密码', `pkey`='/admin/manage/modifyPass', `updatetime`='2018-06-14 08:23:41' WHERE id = '44'
+[2018-06-14 08:28:39] UPDATE admin_user SET `last_login_time`='2018-06-14 08:28:39', `last_login_ip`='172.0.0.1' WHERE id = '1'
+[2018-06-14 08:29:28] UPDATE admin_user SET `last_login_time`='2018-06-14 08:29:28', `last_login_ip`='172.0.0.1' WHERE id = '1'

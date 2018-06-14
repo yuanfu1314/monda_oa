@@ -27,7 +27,7 @@ define(function(require, exports) {
     });
 
     //编辑权限
-    $(".item-edit").on("click", function () {
+    $(document).on("click", ".item-edit", function () {
         var id = $(this).data("id");
         $.get("/admin/permission/edit/?id="+id, function (res) {
             if (res.code != "000") {

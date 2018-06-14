@@ -25,7 +25,7 @@ define(function(require, exports) {
     });
 
     //编辑角色
-    $(".item-edit").on("click", function () {
+    $(document).on("click", ".item-edit", function () {
         var id = $(this).data("id");
         $.get("/admin/role/edit/?id="+id, function (res) {
             if (res.code != "000") {
@@ -45,7 +45,7 @@ define(function(require, exports) {
     });
 
     //修改权限
-	$(".permission-edit").on("click", function () {
+	$(document).on("click", ".permission-edit", function () {
 
 		var id = $(this).data("id");
 		$.get("/admin/role/getPermissions?id="+id, function (res) {
